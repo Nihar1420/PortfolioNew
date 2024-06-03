@@ -1,7 +1,7 @@
 export const navItems = [
     { name: "About", link: "#about" },
     { name: "Projects", link: "#projects" },
-    { name: "Testimonials", link: "#testimonials" },
+    { name: "Experience", link: "#experience" },
     { name: "Contact", link: "#contact" },
   ];
   
@@ -49,8 +49,8 @@ export const navItems = [
   
     {
       id: 5,
-      title: "Currently building a JS Animation library",
-      description: "The Inside Scoop",
+      title: "Currently working on a self thought product",
+      description: "ConnectMe",
       className: "md:col-span-3 md:row-span-2",
       imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
       titleClassName: "justify-center md:justify-start lg:justify-center",
@@ -136,6 +136,44 @@ export const navItems = [
       title: "Director of AlphaStream Technologies",
     },
   ];
+
+  export const techStack = [
+    {
+      icon:"/icons/aws.svg",
+      name: "AWS",
+      title: "Have a good grasp of AWS and management",
+    },
+    {
+      icon:"/public/icons/dotnet.svg",
+      name: "Dotnet",
+      title: "Have a good grasp of AWS and management",
+    },
+    {
+      icon:"/public/icons/graphql.svg",
+      name: "Graphql",
+      title: "Have a good grasp of AWS and management",
+    },
+    {
+      icon:"/public/icons/mongo.svg",
+      name: "MongoDb",
+      title: "Have a good grasp of AWS and management",
+    },
+    {
+      icon:"/public/icons/next.svg",
+      name: "NextJS",
+      title: "Have a good grasp of AWS and management",
+    },
+    {
+      icon:"/public/icons/node.svg",
+      name: "NodeJS",
+      title: "Have a good grasp of AWS and management",
+    },
+    {
+      icon:"/public/icons/react.svg",
+      name: "ReactJS",
+      title: "Have a good grasp of AWS and management",
+    },
+  ];
   
   export const companies = [
     {
@@ -173,28 +211,28 @@ export const navItems = [
   export const workExperience = [
     {
       id: 1,
-      title: "Frontend Engineer Intern",
+      title: "Frontend Developer Intern",
       desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
       className: "md:col-span-2",
       thumbnail: "/exp1.svg",
     },
     {
       id: 2,
-      title: "Mobile App Dev - JSM Tech",
-      desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
-      className: "md:col-span-2", // change to md:col-span-2
+      title: "College Website Developer",
+      desc: "Worked on adding extra features and improvements to the college's official website.",
+      className: "md:col-span-2",
       thumbnail: "/exp2.svg",
     },
     {
       id: 3,
-      title: "Freelance App Dev Project",
-      desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
-      className: "md:col-span-2", // change to md:col-span-2
+      title: "Freelance Web Developer",
+      desc: "Exploring different freelance projects to showcase my web dev skills.",
+      className: "md:col-span-2", 
       thumbnail: "/exp3.svg",
     },
     {
       id: 4,
-      title: "Lead Frontend Developer",
+      title: "Software Engineer - Frontend",
       desc: "Developed and maintained user-facing features using modern frontend technologies.",
       className: "md:col-span-2",
       thumbnail: "/exp4.svg",
@@ -205,13 +243,16 @@ export const navItems = [
     {
       id: 1,
       img: "/git.svg",
+      link: "https://github.com/Nihar1420"
     },
     {
       id: 2,
       img: "/twit.svg",
+      link: "https://x.com/NiharRanjan2000/following"
     },
     {
       id: 3,
       img: "/link.svg",
+      link: "https://www.linkedin.com/in/nihar-ranjan-hota/"
     },
   ];
