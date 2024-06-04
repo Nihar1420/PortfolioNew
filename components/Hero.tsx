@@ -38,7 +38,7 @@ const Hero = () => {
           />
 
           <div className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl text-white">
-            Hi! I&apos;m <span className="text-purple font-bold">Nihar</span> 😎, a <FlipWords duration={4000} words={words}/> Developer from India.
+            Hi! I&apos;m <span className="text-purple font-bold">Nihar</span> 😎, a <FlipWords duration={1000} words={words}/> Developer from India.
           </div>
 
           <a href="#about">
