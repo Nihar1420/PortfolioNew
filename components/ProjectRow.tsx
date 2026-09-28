@@ -1,16 +1,13 @@
+import Link from "next/link";
 import type { Project } from "@/data/content";
 
 // Work list row. Lime floods up on hover and the text flips to ink.
 export function ProjectRow({ project, index }: { project: Project; index: number }) {
-  const href = project.liveUrl ?? project.repoUrl ?? project.npmUrl ?? "#";
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noreferrer"
+    <Link
+      href={`/work/${project.slug}`}
       className="group relative block overflow-hidden border-t border-paper/20"
     >
-      {/* flood layer */}
       <span className="absolute inset-0 -z-0 translate-y-full bg-lime transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0" />
 
       <div className="relative z-10 grid grid-cols-1 items-center gap-3 px-1 py-7 transition-colors duration-300 group-hover:text-ink md:grid-cols-12 md:py-8">
@@ -29,6 +26,6 @@ export function ProjectRow({ project, index }: { project: Project; index: number
           </span>
         </div>
       </div>
-    </a>
+    </Link>
   );
 }

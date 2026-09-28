@@ -50,10 +50,8 @@ export default function Home() {
         <ul>
           {projects.map((p, i) => (
             <li key={p.slug}>
-              <a
-                href={p.liveUrl ?? p.repoUrl ?? p.npmUrl ?? "#"}
-                target="_blank"
-                rel="noreferrer"
+              <Link
+                href={`/work/${p.slug}`}
                 className="group grid grid-cols-1 items-baseline gap-2 border-t border-ink/10 py-6 md:grid-cols-12"
               >
                 <span className="label hidden text-xs text-muted md:col-span-1 md:block">
@@ -66,7 +64,7 @@ export default function Home() {
                 <span className="hidden text-2xl text-cobalt md:col-span-1 md:block md:text-right">
                   &rarr;
                 </span>
-              </a>
+              </Link>
             </li>
           ))}
           <li className="border-t border-ink/10" />
