@@ -1,48 +1,82 @@
-import { FaLocationArrow } from "react-icons/fa6";
-import { socialMedia } from "@/data";
-import MagicButton from "@/components/ui/MagicButton";
 import Link from "next/link";
+import { nav, profile } from "@/data/content";
 
-const Footer = () => {
-    return (
-        <footer className="w-full pt-28 pb-10" id="contact">
-            <div className="flex flex-col items-center">
-                <h1 className="heading lg:max-w-[45vw]">
-                    Ready to take <span className="text-purple">your</span> digital
-                    presence to the next level?
-                </h1>
-                <p className="text-white-200 md:mt-10 my-5 text-center">
-                    Reach out to me today and let&apos;s discuss how I can help you
-                    achieve your goals.
-                </p>
-                <a href="mailto:niharranjanhota864@gmail.com">
-                    <MagicButton
-                        title="Let's get in touch"
-                        icon={<FaLocationArrow />}
-                        position="right"
-                    />
-                </a>
-            </div>
-            <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
-                <p className="md:text-base text-sm md:font-normal font-light">
-                    Copyright © 2024 Nihar Ranjan Hota
-                </p>
+export function Footer() {
+  return (
+    <footer className="border-t border-paper-300 bg-paper-100">
+      <div className="mx-auto grid max-w-page gap-10 px-6 py-16 md:grid-cols-3 md:px-10">
+        <div>
+          <p className="font-display text-2xl text-ink">
+            Nihar<span className="text-cobalt">.</span>
+          </p>
+          <p className="mt-2 max-w-xs text-sm text-ink-muted">
+            {profile.role}. Based in {profile.location}.
+          </p>
+          <p className="mt-4 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.15em] text-ink-warm">
+            <span className="h-2 w-2 rounded-full bg-lime ring-4 ring-lime/30" />
+            {profile.availability}
+          </p>
+        </div>
 
-                <div className="flex items-center md:gap-3 gap-6">
-                    {socialMedia.map((info) => (
-                        <a
-                            href={info.link}
-                            target="_blank"
-                            key={info.id}
-                            className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
-                        >
-                            <img src={info.img} alt="icons" width={20} height={20} />
-                        </a>
-                    ))}
-                </div>
-            </div>
-        </footer>
-    );
-};
+        <div>
+          <p className="font-mono text-xs uppercase tracking-[0.15em] text-ink-faint">
+            Pages
+          </p>
+          <ul className="mt-4 space-y-2">
+            {nav.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="text-ink-muted transition-colors hover:text-cobalt"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-export default Footer;
+        <div>
+          <p className="font-mono text-xs uppercase tracking-[0.15em] text-ink-faint">
+            Elsewhere
+          </p>
+          <ul className="mt-4 space-y-2">
+            <li>
+              <a
+                href={`mailto:${profile.email}`}
+                className="text-ink-muted transition-colors hover:text-cobalt"
+              >
+                Email
+              </a>
+            </li>
+            <li>
+              <a
+                href={profile.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="text-ink-muted transition-colors hover:text-cobalt"
+              >
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a
+                href={profile.github}
+                target="_blank"
+                rel="noreferrer"
+                className="text-ink-muted transition-colors hover:text-cobalt"
+              >
+                GitHub
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="mx-auto max-w-page px-6 pb-10 md:px-10">
+        <p className="font-mono text-xs text-ink-faint">
+          &copy; {new Date().getFullYear()} {profile.name}
+        </p>
+      </div>
+    </footer>
+  );
+}
