@@ -1,31 +1,49 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Kreon } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "./ThemeProvider";
+import { Nav } from "@/components/Nav";
+import { Footer } from "@/components/Footer";
+import { profile } from "@/data/content";
 
-const inter = Inter({ subsets: ["latin"] });
+const kreon = Kreon({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-kreon",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "Nihar's Portfolio",
-  description: "Showcases my developer sklills through this wonderful portfolio website",
+  metadataBase: new URL(profile.domain),
+  title: {
+    default: `${profile.name} · Full-Stack & AI Architect`,
+    template: `%s · ${profile.name}`,
+  },
+  description: profile.blurb,
+  openGraph: {
+    title: `${profile.name} · Full-Stack & AI Architect`,
+    description: profile.blurb,
+    url: profile.domain,
+    siteName: profile.name,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${profile.name} · Full-Stack & AI Architect`,
+    description: profile.blurb,
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <ThemeProvider 
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+    <html lang="en" className={kreon.variable}>
+      <body className="font-sans antialiased">
+        <Nav />
+        <main className="min-h-screen">{children}</main>
+        <Footer />
       </body>
     </html>
   );
