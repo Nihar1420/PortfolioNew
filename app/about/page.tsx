@@ -1,147 +1,124 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Reveal } from "@/components/Reveal";
-import { AvailableBadge } from "@/components/AvailableBadge";
+import { Room } from "@/components/Room";
+import { Rise, FadeUp } from "@/components/Rise";
+import { StatBand } from "@/components/StatBand";
 import { about, skills, profile } from "@/data/content";
 
-export const metadata: Metadata = {
-  title: "About",
-  description: profile.blurb,
-};
+export const metadata: Metadata = { title: "About" };
 
 export default function AboutPage() {
   return (
-    <>
-      <section className="mx-auto max-w-page px-6 pb-12 pt-20 md:px-10 md:pt-28">
-        <div className="grid gap-12 md:grid-cols-12 md:items-end">
-          {/* Portrait (arch) */}
-          <div className="md:col-span-4">
-            <div className="arch relative aspect-[3/4] w-full max-w-xs overflow-hidden bg-paper-300">
+    <Room room="lime">
+      <section className="mx-auto max-w-page px-6 pt-6 md:px-10 md:pt-10">
+        <div className="grid gap-10 md:grid-cols-12">
+          <h1 className="text-d2 font-bold tracking-tightest md:col-span-8">
+            <Rise>{about.headline.lead}</Rise>
+            <Rise delay={0.08} className="text-cobalt">
+              {about.headline.accent}
+            </Rise>
+          </h1>
+          <div className="md:col-span-4 md:flex md:justify-end">
+            <div className="arch relative aspect-[3/4] w-full max-w-[15rem] overflow-hidden border border-ink/10 bg-paper">
               <Image
                 src="/portrait.jpg"
-                alt="Nihar Ranjan Hota"
+                alt={profile.name}
                 fill
-                sizes="(max-width: 768px) 80vw, 320px"
+                sizes="(max-width: 768px) 70vw, 240px"
                 className="object-cover object-top"
                 priority
               />
             </div>
           </div>
+        </div>
 
-          <div className="md:col-span-8">
-            <p className="eyebrow mb-4 font-mono text-xs uppercase tracking-[0.2em] text-cobalt">
-              About
-            </p>
-            <h1 className="font-display text-4xl leading-tight text-ink md:text-5xl">
-              {profile.role}.
-            </h1>
-            <div className="mt-8 space-y-5 text-lg text-ink-muted">
-              {about.paragraphs.map((p, i) => (
-                <Reveal key={i} delay={i * 0.05}>
-                  <p>{p}</p>
-                </Reveal>
-              ))}
-            </div>
-          </div>
+        <div className="mt-12 grid gap-8 md:grid-cols-3">
+          {about.paragraphs.map((p, i) => (
+            <FadeUp key={i} delay={i * 0.05}>
+              <p className="leading-snug text-body md:text-lg">{p}</p>
+            </FadeUp>
+          ))}
+        </div>
+      </section>
+
+      {/* Stat band */}
+      <section className="mx-auto max-w-page px-6 py-14 md:px-10">
+        <StatBand />
+      </section>
+
+      {/* Timeline */}
+      <section className="mx-auto max-w-page px-6 pb-14 md:px-10">
+        <div className="grid gap-6 md:grid-cols-12">
+          <h2 className="text-4xl font-bold tracking-tightest md:col-span-3">
+            Where I&rsquo;ve worked
+          </h2>
+          <ol className="md:col-span-9">
+            {about.timeline.map((r, i) => (
+              <li
+                key={i}
+                className="grid gap-1 border-t border-ink/20 py-6 md:grid-cols-12 md:gap-4"
+              >
+                <span className="label text-xs opacity-60 md:col-span-3">
+                  {r.period}
+                </span>
+                <div className="md:col-span-7">
+                  <p className="text-xl font-bold">{r.title}</p>
+                  <p className="text-body">{r.org}</p>
+                </div>
+                <span className="label text-xs text-cobalt md:col-span-2 md:text-right">
+                  {r.tag}
+                </span>
+              </li>
+            ))}
+            <div className="border-t border-ink/20" />
+          </ol>
         </div>
       </section>
 
       {/* Skills */}
-      <section className="mx-auto max-w-page px-6 py-12 md:px-10">
-        <div className="grid gap-10 md:grid-cols-12">
-          <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-ink-faint md:col-span-3">
-            Toolkit
-          </h2>
-          <div className="grid gap-10 md:col-span-9 md:grid-cols-2">
-            {Object.entries(skills).map(([group, items]) => (
-              <div key={group}>
-                <h3 className="font-display text-2xl text-ink">{group}</h3>
-                <ul className="mt-4 flex flex-wrap gap-2">
-                  {items.map((s) => (
-                    <li
-                      key={s}
-                      className="rounded-full border border-paper-400 px-3 py-1 font-mono text-[11px] text-ink-muted"
-                    >
-                      {s}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Clients */}
-      <section className="mx-auto max-w-page px-6 py-12 md:px-10">
-        <div className="grid gap-8 md:grid-cols-12">
-          <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-ink-faint md:col-span-3">
-            Enterprise delivery
-          </h2>
-          <ul className="space-y-4 md:col-span-9">
-            {about.clients.map((c, i) => (
-              <li key={i} className="flex gap-3 text-ink-muted">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cobalt" />
-                <span>{c}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* Experience timeline */}
-      {about.timeline.show && (
-        <section className="mx-auto max-w-page px-6 py-12 md:px-10">
-          <div className="grid gap-8 md:grid-cols-12">
-            <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-ink-faint md:col-span-3">
-              Experience
+      <section className="mx-auto max-w-page px-6 pb-14 md:px-10">
+        {Object.entries(skills).map(([group, items]) => (
+          <div
+            key={group}
+            className="grid gap-4 border-t border-ink/20 py-8 md:grid-cols-12 md:items-center"
+          >
+            <h2 className="text-4xl font-bold tracking-tightest md:col-span-3">
+              {group}
             </h2>
-            <ol className="md:col-span-9">
-              {about.timeline.roles.map((r, i) => (
+            <ul className="flex flex-wrap gap-2 md:col-span-9">
+              {items.map((s) => (
                 <li
-                  key={i}
-                  className="grid gap-1 border-t border-paper-300 py-6 md:grid-cols-12 md:gap-4"
+                  key={s}
+                  className="label rounded-full border border-ink/40 px-4 py-2 text-xs"
                 >
-                  <span className="font-mono text-xs text-ink-faint md:col-span-3">
-                    {r.period}
-                  </span>
-                  <div className="md:col-span-9">
-                    <p className="font-display text-xl text-ink">{r.title}</p>
-                    <p className="text-ink-muted">{r.org}</p>
-                  </div>
+                  {s}
                 </li>
               ))}
-              <div className="border-t border-paper-300" />
-            </ol>
+            </ul>
           </div>
-        </section>
-      )}
+        ))}
+        <div className="border-t border-ink/20" />
+      </section>
 
-      {/* Availability + resume */}
-      <section className="mx-auto max-w-page px-6 py-20 md:px-10">
-        <div className="flex flex-col items-center gap-8 text-center">
-          <AvailableBadge size={120} />
-          <h2 className="max-w-2xl font-display text-3xl text-ink md:text-4xl">
-            {profile.lookingFor}
-          </h2>
-          <div className="flex flex-wrap justify-center gap-4">
+      {/* CTA */}
+      <section className="mx-auto max-w-page px-6 pb-20 md:px-10">
+        <div className="flex flex-wrap items-center gap-4">
+          <a
+            href={`mailto:${profile.email}`}
+            className="label rounded-full bg-ink px-6 py-3 text-sm text-paper transition-colors hover:bg-cobalt"
+          >
+            Email me
+          </a>
+          {about.resumeUrl && (
             <a
-              href={`mailto:${profile.email}`}
-              className="rounded-full bg-cobalt px-6 py-3 font-mono text-xs uppercase tracking-[0.15em] text-paper transition-colors hover:bg-ink"
+              href={about.resumeUrl}
+              className="label rounded-full border border-ink/30 px-6 py-3 text-sm transition-colors hover:border-ink"
             >
-              Email me
+              Download resume
             </a>
-            {about.resumeUrl && (
-              <a
-                href={about.resumeUrl}
-                className="rounded-full border border-paper-400 px-6 py-3 font-mono text-xs uppercase tracking-[0.15em] text-ink transition-colors hover:border-ink"
-              >
-                Download resume
-              </a>
-            )}
-          </div>
+          )}
         </div>
       </section>
-    </>
+    </Room>
   );
 }

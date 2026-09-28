@@ -1,51 +1,33 @@
 import type { Project } from "@/data/content";
 
-// Editorial index row: number, title, tagline, tech, year, and the best available link.
+// Work list row. Lime floods up on hover and the text flips to ink.
 export function ProjectRow({ project, index }: { project: Project; index: number }) {
   const href = project.liveUrl ?? project.repoUrl ?? project.npmUrl ?? "#";
-  const linkLabel = project.liveUrl
-    ? "Visit"
-    : project.npmUrl
-      ? "npm"
-      : "Code";
   return (
     <a
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="group block border-t border-paper-300 py-8 transition-colors hover:bg-paper-100"
+      className="group relative block overflow-hidden border-t border-paper/20"
     >
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-12 md:items-baseline">
-        <div className="hidden font-mono text-xs text-ink-faint md:col-span-1 md:block">
+      {/* flood layer */}
+      <span className="absolute inset-0 -z-0 translate-y-full bg-lime transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0" />
+
+      <div className="relative z-10 grid grid-cols-1 items-center gap-3 px-1 py-7 transition-colors duration-300 group-hover:text-ink md:grid-cols-12 md:py-8">
+        <div className="label hidden text-xs opacity-60 md:col-span-1 md:block">
           {String(index + 1).padStart(2, "0")}
         </div>
-        <div className="md:col-span-4">
-          <h3 className="font-display text-3xl text-ink transition-colors group-hover:text-cobalt md:text-4xl">
-            {project.title}
-          </h3>
-          <span className="mt-2 inline-block font-mono text-xs uppercase tracking-[0.15em] text-cobalt opacity-0 transition-opacity group-hover:opacity-100">
-            {linkLabel} &rarr;
+        <h3 className="text-4xl font-bold tracking-tightest md:col-span-4 md:text-5xl">
+          {project.title}
+        </h3>
+        <p className="max-w-md text-base leading-snug opacity-90 md:col-span-6">
+          {project.tagline}
+        </p>
+        <div className="hidden justify-end text-3xl md:col-span-1 md:flex">
+          <span className="transition-transform duration-300 group-hover:translate-x-1">
+            &rarr;
           </span>
         </div>
-        <div className="md:col-span-5">
-          <p className="text-ink-muted">{project.tagline}</p>
-          {project.metric && (
-            <p className="mt-2 font-mono text-xs text-cobalt">{project.metric}</p>
-          )}
-        </div>
-        <div className="font-mono text-xs text-ink-faint md:col-span-2 md:text-right">
-          {project.year}
-        </div>
-      </div>
-      <div className="mt-4 flex flex-wrap gap-2 md:ml-[8.333%]">
-        {project.tech.map((t) => (
-          <span
-            key={t}
-            className="rounded-full border border-paper-400 px-3 py-1 font-mono text-[11px] text-ink-muted"
-          >
-            {t}
-          </span>
-        ))}
       </div>
     </a>
   );

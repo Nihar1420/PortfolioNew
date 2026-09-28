@@ -11,29 +11,35 @@ html {
 }
 
 body {
-  background-color: #faf9f5;
-  color: #171717;
+  background-color: #f4f3ee;
+  color: #111111;
+  font-family: var(--font-kreon), Georgia, serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
   background: #d4f24a;
-  color: #171717;
+  color: #111111;
 }
 
-/* Focus states */
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid #1b3fd6;
-  outline-offset: 3px;
-  border-radius: 2px;
+/* Small bold caps label */
+.label {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 /* Arch shape for the About portrait */
 .arch {
   border-top-left-radius: 9999px;
   border-top-right-radius: 9999px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -4,14 +4,13 @@ export const profile = {
   name: "Nihar Ranjan Hota",
   role: "Senior AI Solutions Architect and Full-Stack Engineering Lead",
   location: "Ahmedabad, India",
+  timezone: "IST (UTC+5:30)",
   blurb:
-    "Senior AI Solutions Architect and Full-Stack Engineering Lead. 5+ years building full-stack systems, now focused on agentic AI: LLM agents, RAG, and multi-agent architectures.",
+    "Senior AI Solutions Architect and Full-Stack Engineering Lead. Seven years across the stack, now building AI-native products: LLM agents, RAG, and multi-agent systems.",
   lookingFor: "Open to senior IC and architect roles on AI-native products.",
-  availability: "Available · senior AI roles · 2026",
   email: "niharranjanhota864@gmail.com",
   linkedin: "https://www.linkedin.com/in/nihar-ranjan-hota/",
   github: "https://github.com/Nihar1420",
-  // TODO: replace with your custom domain if you set one up
   domain: "https://nihar-dev.vercel.app",
 };
 
@@ -25,69 +24,47 @@ export type Project = {
   slug: string;
   title: string;
   tagline: string;
-  year: string;
   tech: string[];
   liveUrl?: string;
   repoUrl?: string;
   npmUrl?: string;
-  // TODO(you): add a real metric if you have one; otherwise leave undefined.
-  metric?: string;
 };
 
 export const projects: Project[] = [
   {
     slug: "githancer",
     title: "Githancer",
-    tagline:
-      "Git timeline manager shipped as a published npm CLI. One deterministic scheduling engine powers both a Next.js dashboard and the terminal.",
-    year: "2026",
-    tech: ["NestJS", "Next.js", "TypeScript", "pnpm monorepo", "PostgreSQL"],
+    tagline: "Rebuild a repo's commit history from the terminal · published npm CLI · solo",
+    tech: ["NestJS", "Next.js", "TypeScript", "pnpm monorepo"],
     repoUrl: "https://github.com/Nihar1420/Githancer",
     npmUrl: "https://www.npmjs.com/package/githancer-cli",
-    metric: "5 scheduling algorithms, 100% scheduler test coverage, published npm CLI",
   },
   {
     slug: "agenthire",
     title: "Agenthire",
-    tagline:
-      "Autonomous multi-agent job and freelance application agent. An orchestrator routes work to specialised sub-agents across Groq and Gemini.",
-    year: "2026",
-    tech: ["Node.js", "Multi-agent", "Groq / Gemini", "Playwright", "Cron"],
+    tagline: "Orchestrator + specialist agents that find, enrich and pitch work 24/7",
+    tech: ["Node.js", "Multi-agent", "Groq / Gemini", "Playwright"],
     repoUrl: "https://github.com/Nihar1420/Agenthire-2.0",
-    metric: "Aggregates 6 job sources with 0-100 LLM fit-scoring",
   },
   {
     slug: "reel-purpose",
     title: "Reel Purpose",
-    tagline:
-      "Full-stack, multi-vendor e-commerce for fishing accessories, with Stripe checkout, tax handling, and vendor onboarding.",
-    year: "2025",
-    tech: ["Next.js", "Prisma", "Stripe", "PostgreSQL", "S3"],
+    tagline: "Multi-vendor storefront for a fishing brand · Stripe with server-side tax · live",
+    tech: ["Next.js", "Prisma", "Stripe", "PostgreSQL"],
     liveUrl: "https://reelpurpose.fishing",
     repoUrl: "https://github.com/Nihar1420/reel-purpose",
   },
   {
     slug: "audiodj-drops",
     title: "AudioDJ Drops",
-    tagline:
-      "A DJ-drops generation platform: voice generation and preview, ffmpeg audio processing, subscription plans, and automated delivery.",
-    year: "2025",
-    tech: ["Next.js", "ffmpeg", "Stripe", "Cloudflare R2", "Prisma"],
+    tagline: "Custom voiced drops, from preview to paid delivery, fully automated · live",
+    tech: ["Next.js", "ffmpeg", "Stripe", "Cloudflare R2"],
     liveUrl: "https://generator.audiodjdrops.com",
     repoUrl: "https://github.com/Nihar1420/GeneratorAudioDrops",
   },
 ];
 
 export const skills = {
-  "Full-stack": [
-    "Next.js",
-    "TypeScript",
-    "React",
-    "Node.js",
-    "NestJS",
-    ".NET / C#",
-    "PHP / Laravel",
-  ],
   "AI / LLM": [
     "Anthropic Claude API",
     "LangChain",
@@ -98,48 +75,48 @@ export const skills = {
     "Multi-agent systems",
     "MCP",
   ],
+  "Full-stack": [
+    "Next.js",
+    "TypeScript",
+    "React",
+    "Node.js",
+    "NestJS",
+    ".NET / C#",
+    "PHP / Laravel",
+  ],
 };
 
 export const about = {
+  headline: { lead: "The agent is never the", accent: "whole system." },
   paragraphs: [
-    "I design and ship AI-native products, and lead a small senior engineering team delivering them to enterprise clients across Germany, Italy, and the UAE.",
-    "My work sits where full-stack engineering meets applied AI: LLM agents, RAG pipelines, and multi-agent architectures, wrapped in production systems that real businesses depend on.",
-    "Recognised internally as Emerging Team Lead and Best Performer. I care about systems that are correct, legible, and genuinely useful, not demos.",
+    "I build AI-native products: LLM agents that plan and act, retrieval pipelines that ground them in real data, and multi-agent systems where the hard part is the contract between agents, not the prompt.",
+    "Seven years across the stack means I care about everything around the model too: the NestJS service it calls, the Next.js screen people use, the job that retries overnight, and what happens when a model returns nonsense.",
+    "I lead a small senior team delivering AI-integrated systems for enterprise clients in Germany, Italy and the UAE. Next, I want to go deeper as a senior IC or architect on a product that is AI-native from day one.",
   ],
-  timeline: {
-    show: true,
-    roles: [
-      {
-        period: "2022 - Present",
-        title: "Senior AI Consultant & Full-Stack Engineering Lead",
-        org: "BrainerHub Solutions",
-      },
-      {
-        period: "2022",
-        title: "Software Developer Intern (MERN)",
-        org: "UNICOMPILER",
-      },
-      {
-        period: "2021 - 2022",
-        title: "Full-Stack Developer (MERN), Freelance",
-        org: "Upwork / Labanya Pharmaceuticals",
-      },
-    ],
-  },
-  // Anonymised until you confirm you can name them.
-  clients: [
-    "CRM and LLM quotation automation for an international architecture firm (Zoho CRM, a custom 14-stage production pipeline, Mistral-based quotations).",
-    "AI-integrated systems for enterprise clients across Germany, Italy, and the UAE.",
+  stats: [
+    { big: "~7", label: "Years full stack" },
+    { big: "DE · IT · AE", label: "Enterprise delivery" },
+    { big: "Emerging Team Lead / Best Performer", label: "Recognised internally" },
   ],
-  resumeUrl: "/resume.pdf",
-};
-
-export const openSource = {
-  title: "Open source",
-  items: [
+  timeline: [
     {
-      text: "Identified and submitted a fix for a cross-tenant data-isolation bug in langchain-ai/deepagentsjs; maintainers confirmed it and addressed it upstream.",
-      url: "https://github.com/langchain-ai/deepagentsjs/pull/796",
+      period: "2022 - Now",
+      title: "Senior AI Consultant & Full-Stack Engineering Lead",
+      org: "BrainerHub Solutions",
+      tag: "Current",
+    },
+    {
+      period: "Client work",
+      title: "CRM + LLM quotation automation",
+      org: "For an international architecture firm: Zoho CRM, a custom 14-stage production pipeline, and quotations drafted with Mistral.",
+      tag: "Enterprise",
+    },
+    {
+      period: "2021 - 2022",
+      title: "Full-Stack Developer (MERN), Freelance",
+      org: "Upwork / Labanya Pharmaceuticals",
+      tag: "Earlier",
     },
   ],
+  resumeUrl: "/resume.pdf",
 };
