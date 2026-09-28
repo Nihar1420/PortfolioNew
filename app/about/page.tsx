@@ -89,6 +89,34 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Experience timeline */}
+      {about.timeline.show && (
+        <section className="mx-auto max-w-page px-6 py-12 md:px-10">
+          <div className="grid gap-8 md:grid-cols-12">
+            <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-ink-faint md:col-span-3">
+              Experience
+            </h2>
+            <ol className="md:col-span-9">
+              {about.timeline.roles.map((r, i) => (
+                <li
+                  key={i}
+                  className="grid gap-1 border-t border-paper-300 py-6 md:grid-cols-12 md:gap-4"
+                >
+                  <span className="font-mono text-xs text-ink-faint md:col-span-3">
+                    {r.period}
+                  </span>
+                  <div className="md:col-span-9">
+                    <p className="font-display text-xl text-ink">{r.title}</p>
+                    <p className="text-ink-muted">{r.org}</p>
+                  </div>
+                </li>
+              ))}
+              <div className="border-t border-paper-300" />
+            </ol>
+          </div>
+        </section>
+      )}
+
       {/* Availability + resume */}
       <section className="mx-auto max-w-page px-6 py-20 md:px-10">
         <div className="flex flex-col items-center gap-8 text-center">

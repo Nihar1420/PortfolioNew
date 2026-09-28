@@ -27,7 +27,12 @@ export function ProjectRow({ project, index }: { project: Project; index: number
             {linkLabel} &rarr;
           </span>
         </div>
-        <p className="text-ink-muted md:col-span-5">{project.tagline}</p>
+        <div className="md:col-span-5">
+          <p className="text-ink-muted">{project.tagline}</p>
+          {project.metric && (
+            <p className="mt-2 font-mono text-xs text-cobalt">{project.metric}</p>
+          )}
+        </div>
         <div className="font-mono text-xs text-ink-faint md:col-span-2 md:text-right">
           {project.year}
         </div>

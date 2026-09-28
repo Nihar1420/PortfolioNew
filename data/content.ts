@@ -2,10 +2,10 @@
 
 export const profile = {
   name: "Nihar Ranjan Hota",
-  role: "Senior Full-Stack Engineer and AI Solutions Architect",
+  role: "Senior AI Solutions Architect and Full-Stack Engineering Lead",
   location: "Ahmedabad, India",
   blurb:
-    "Senior Full-Stack Engineer and AI Solutions Architect. About 7 years building full-stack systems, now focused on LLM agents, RAG, and multi-agent architectures.",
+    "Senior AI Solutions Architect and Full-Stack Engineering Lead. 5+ years building full-stack systems, now focused on agentic AI: LLM agents, RAG, and multi-agent architectures.",
   lookingFor: "Open to senior IC and architect roles on AI-native products.",
   availability: "Available · senior AI roles · 2026",
   email: "niharranjanhota864@gmail.com",
@@ -44,7 +44,7 @@ export const projects: Project[] = [
     tech: ["NestJS", "Next.js", "TypeScript", "pnpm monorepo", "PostgreSQL"],
     repoUrl: "https://github.com/Nihar1420/Githancer",
     npmUrl: "https://www.npmjs.com/package/githancer-cli",
-    metric: "Published npm package (githancer-cli)",
+    metric: "5 scheduling algorithms, 100% scheduler test coverage, published npm CLI",
   },
   {
     slug: "agenthire",
@@ -54,6 +54,7 @@ export const projects: Project[] = [
     year: "2026",
     tech: ["Node.js", "Multi-agent", "Groq / Gemini", "Playwright", "Cron"],
     repoUrl: "https://github.com/Nihar1420/Agenthire-2.0",
+    metric: "Aggregates 6 job sources with 0-100 LLM fit-scoring",
   },
   {
     slug: "reel-purpose",
@@ -105,11 +106,24 @@ export const about = {
     "My work sits where full-stack engineering meets applied AI: LLM agents, RAG pipelines, and multi-agent architectures, wrapped in production systems that real businesses depend on.",
     "Recognised internally as Emerging Team Lead and Best Performer. I care about systems that are correct, legible, and genuinely useful, not demos.",
   ],
-  // TODO(you): confirm company/title/years, then flip `show` to true.
   timeline: {
-    show: false,
+    show: true,
     roles: [
-      { period: "TODO", title: "TODO title", org: "TODO company" },
+      {
+        period: "2022 - Present",
+        title: "Senior AI Consultant & Full-Stack Engineering Lead",
+        org: "BrainerHub Solutions",
+      },
+      {
+        period: "2022",
+        title: "Software Developer Intern (MERN)",
+        org: "UNICOMPILER",
+      },
+      {
+        period: "2021 - 2022",
+        title: "Full-Stack Developer (MERN), Freelance",
+        org: "Upwork / Labanya Pharmaceuticals",
+      },
     ],
   },
   // Anonymised until you confirm you can name them.
