@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
 import { AvailableBadge } from "@/components/AvailableBadge";
 import { about, skills, profile } from "@/data/content";
@@ -16,13 +17,14 @@ export default function AboutPage() {
           {/* Portrait (arch) */}
           <div className="md:col-span-4">
             <div className="arch relative aspect-[3/4] w-full max-w-xs overflow-hidden bg-paper-300">
-              {/* TODO(you): drop portrait.jpg into /public and swap this block for:
-                  <Image src="/portrait.jpg" alt="Nihar Ranjan Hota" fill className="object-cover" /> */}
-              <div className="flex h-full items-center justify-center p-6 text-center font-mono text-xs uppercase tracking-[0.15em] text-ink-faint">
-                Portrait
-                <br />
-                (add /public/portrait.jpg)
-              </div>
+              <Image
+                src="/portrait.jpg"
+                alt="Nihar Ranjan Hota"
+                fill
+                sizes="(max-width: 768px) 80vw, 320px"
+                className="object-cover object-top"
+                priority
+              />
             </div>
           </div>
 
