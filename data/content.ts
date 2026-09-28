@@ -117,8 +117,7 @@ export const about = {
     "CRM and LLM quotation automation for an international architecture firm (Zoho CRM, a custom 14-stage production pipeline, Mistral-based quotations).",
     "AI-integrated systems for enterprise clients across Germany, Italy, and the UAE.",
   ],
-  // TODO(you): drop resume.pdf into /public and set to "/resume.pdf".
-  resumeUrl: "",
+  resumeUrl: "/resume.pdf",
 };
 
 export const openSource = {
