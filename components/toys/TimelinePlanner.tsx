@@ -11,7 +11,7 @@ export function TimelinePlanner({ onTried }: { onTried?: () => void }) {
         <span className="label text-[10px] text-paper/50">Githancer · Timeline planner</span>
         <span className="label text-[10px] text-lime">Try it →</span>
       </div>
-      <p className="mt-6 text-2xl font-bold tracking-tightest">
+      <p className="mt-6 text-xl font-bold tracking-tightest sm:text-2xl">
         {spread ? "14 commits, spread across the range" : "14 commits, all stuck on one day"}
       </p>
       <div className="relative mt-6 h-20">

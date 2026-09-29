@@ -86,15 +86,18 @@ export default function Home() {
 
       {/* Trailers band */}
       <section className="mx-auto max-w-page px-6 py-10 md:px-10">
-        <div className="rounded-3xl bg-cobalt px-8 py-14 text-paper md:px-14 md:py-20">
-          <p className="label text-[10px] text-lime">Next stop</p>
+        <Link
+          href="/work"
+          className="group block rounded-3xl bg-cobalt px-8 py-14 text-paper transition-colors duration-300 hover:bg-lime hover:text-ink md:px-14 md:py-20"
+        >
+          <p className="label text-[10px] text-lime transition-colors group-hover:text-ink">Next stop</p>
           <div className="mt-5 flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <div className="max-w-2xl">
               <h2 className="text-4xl font-bold leading-tight tracking-tightest md:text-5xl">
                 Those were the trailers. The full stories are in{" "}
-                <span className="text-lime">Featured projects.</span>
+                <span className="text-lime transition-colors group-hover:text-ink">Featured projects.</span>
               </h2>
-              <p className="mt-4 text-paper/70">
+              <p className="mt-4 text-paper/70 transition-colors group-hover:text-ink/70">
                 Architecture, hard decisions and results for all four.
               </p>
             </div>
@@ -119,16 +122,12 @@ export default function Home() {
                   </span>
                 ))}
               </div>
-              <Link
-                href="/work"
-                className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-lime text-2xl text-ink transition-transform hover:translate-x-1"
-                aria-label="All projects"
-              >
+              <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-lime text-2xl text-ink transition-all duration-300 group-hover:translate-x-1 group-hover:bg-ink group-hover:text-lime">
                 →
-              </Link>
+              </span>
             </div>
           </div>
-        </div>
+        </Link>
       </section>
 
       {/* OSS note */}

@@ -23,6 +23,7 @@ export const nav = [
 export type Project = {
   slug: string;
   title: string;
+  category: string;
   tagline: string;
   tech: string[];
   liveUrl?: string;
@@ -34,7 +35,8 @@ export const projects: Project[] = [
   {
     slug: "githancer",
     title: "Githancer",
-    tagline: "Rebuild a repo's commit history from the terminal · published npm CLI · solo",
+    category: "Published npm CLI",
+    tagline: "Rebuild a repo's commit history from the terminal.",
     tech: ["NestJS", "Next.js", "TypeScript", "pnpm monorepo"],
     repoUrl: "https://github.com/Nihar1420/Githancer",
     npmUrl: "https://www.npmjs.com/package/githancer-cli",
@@ -42,14 +44,16 @@ export const projects: Project[] = [
   {
     slug: "agenthire",
     title: "Agenthire",
-    tagline: "Orchestrator + specialist agents that find, enrich and pitch work 24/7",
+    category: "Multi-agent",
+    tagline: "Specialist agents that find, enrich and pitch work 24/7.",
     tech: ["Node.js", "Multi-agent", "Groq / Gemini", "Playwright"],
     repoUrl: "https://github.com/Nihar1420/Agenthire-2.0",
   },
   {
     slug: "reel-purpose",
     title: "Reel Purpose",
-    tagline: "Multi-vendor storefront for a fishing brand · Stripe with server-side tax · live",
+    category: "Live commerce",
+    tagline: "Multi-vendor storefront for a fishing brand.",
     tech: ["Next.js", "Prisma", "Stripe", "PostgreSQL"],
     liveUrl: "https://reelpurpose.fishing",
     repoUrl: "https://github.com/Nihar1420/reel-purpose",
@@ -57,7 +61,8 @@ export const projects: Project[] = [
   {
     slug: "audiodj-drops",
     title: "AudioDJ Drops",
-    tagline: "Custom voiced drops, from preview to paid delivery, fully automated · live",
+    category: "Live automation",
+    tagline: "Voiced drops from preview to paid delivery.",
     tech: ["Next.js", "ffmpeg", "Stripe", "Cloudflare R2"],
     liveUrl: "https://generator.audiodjdrops.com",
     repoUrl: "https://github.com/Nihar1420/GeneratorAudioDrops",
