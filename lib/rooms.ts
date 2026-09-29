@@ -20,12 +20,12 @@ export const rooms: Record<
   paper: {
     bg: "bg-paper dark:bg-night",
     text: "text-ink dark:text-bone",
-    link: "text-ink/60 hover:text-cobalt dark:text-bone/60 dark:hover:text-cobalt",
-    active: "text-cobalt",
+    link: "text-ink/60 hover:text-accent dark:text-bone/60 dark:hover:text-accent",
+    active: "text-accent",
     pill: "bg-ink text-paper hover:bg-cobalt dark:bg-bone dark:text-ink dark:hover:bg-cobalt",
     rule: "border-rule",
     wipe: "bg-cobalt",
-    accentText: "text-cobalt",
+    accentText: "text-accent",
   },
   cobalt: {
     bg: "bg-cobalt dark:bg-night",
@@ -40,12 +40,12 @@ export const rooms: Record<
   lime: {
     bg: "bg-lime dark:bg-night",
     text: "text-ink dark:text-bone",
-    link: "text-ink/60 hover:text-cobalt dark:text-bone/60 dark:hover:text-cobalt",
-    active: "text-cobalt dark:text-cobalt",
+    link: "text-ink/60 hover:text-accent dark:text-bone/60 dark:hover:text-accent",
+    active: "text-accent dark:text-accent",
     pill: "bg-ink text-paper hover:bg-cobalt dark:bg-bone dark:text-ink",
     rule: "border-ink/15 dark:border-bone/15",
     wipe: "bg-cobalt",
-    accentText: "text-cobalt",
+    accentText: "text-accent",
   },
   ink: {
     bg: "bg-ink dark:bg-night",

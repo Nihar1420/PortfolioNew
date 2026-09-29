@@ -22,8 +22,9 @@ const config: Config = {
         deepcobalt: "#0e1a52",
         // Theme-aware raised surface (light #ebeae2 / dark #1a1a18)
         raised: "rgb(var(--c-raised) / <alpha-value>)",
-        // Theme-aware (flip via CSS variables in light/dark)
-        cobalt: "rgb(var(--c-cobalt) / <alpha-value>)",
+        // Cobalt stays a fixed fill; only cobalt *text* lifts on dark, via `accent`.
+        cobalt: "#1b3fd6",
+        accent: "rgb(var(--c-accent) / <alpha-value>)",
         body: "rgb(var(--c-body) / <alpha-value>)",
         muted: "rgb(var(--c-muted) / <alpha-value>)",
         rule: "rgb(var(--c-rule) / <alpha-value>)",

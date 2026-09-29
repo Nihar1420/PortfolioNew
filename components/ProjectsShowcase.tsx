@@ -59,7 +59,7 @@ export function ProjectsShowcase() {
     <section id="projects" className="mx-auto max-w-page px-6 py-16 md:px-10">
       <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
         <h2 className="text-d3 font-bold tracking-tightest">
-          Projects to <span className="text-cobalt">talk about.</span>
+          Projects to <span className="text-accent">talk about.</span>
         </h2>
         <div className="text-right">
           <p className="max-w-xs text-sm text-body">
@@ -69,7 +69,7 @@ export function ProjectsShowcase() {
             <span className="label rounded-full border border-rule px-3 py-1 text-[10px] dark:border-bone/20">
               {tried.size}/4 toys tried
             </span>
-            <Link href="/work" className="label text-[10px] text-cobalt hover:underline">
+            <Link href="/work" className="label text-[10px] text-accent hover:underline">
               All projects →
             </Link>
           </div>
@@ -80,16 +80,18 @@ export function ProjectsShowcase() {
         {projects.map((p, i) => {
           const flip = i % 2 === 1;
           return (
-            <div key={p.id} className="grid items-center gap-8 md:grid-cols-2">
-              <div className={cn(flip && "md:order-2")}>{toy(p.id)}</div>
-              <div className={cn(flip && "md:order-1")}>
-                <p className="label text-[10px] text-cobalt">{p.meta}</p>
+            <div key={p.id} className="grid items-stretch gap-8 md:grid-cols-12">
+              <div className={cn("md:col-span-7 md:min-h-[360px] [&>div]:h-full", flip && "md:order-2")}>
+                {toy(p.id)}
+              </div>
+              <div className={cn("flex flex-col justify-center md:col-span-5", flip && "md:order-1")}>
+                <p className="label text-[10px] text-accent">{p.meta}</p>
                 <h3 className="mt-3 text-4xl font-bold tracking-tightest md:text-5xl">{p.title}</h3>
                 <p className="mt-4 max-w-md text-body">{p.desc}</p>
                 <p className="mt-4 label text-[10px] text-muted">{p.tech}</p>
                 <Link
                   href={p.href}
-                  className="mt-5 inline-block font-bold text-cobalt hover:underline"
+                  className="mt-5 inline-block font-bold text-accent hover:underline"
                 >
                   Read the case study →
                 </Link>

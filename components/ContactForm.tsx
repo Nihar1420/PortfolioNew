@@ -111,7 +111,7 @@ export function ContactForm({ topic: initialTopic = "" }: { topic?: string }) {
             {status === "sending" ? "Sending…" : "Send message"} &#9993;
           </button>
           {status === "error" && (
-            <p className="text-sm text-cobalt">Something went wrong — email me directly instead.</p>
+            <p className="text-sm text-accent">Something went wrong — email me directly instead.</p>
           )}
         </form>
       )}

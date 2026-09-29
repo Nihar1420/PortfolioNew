@@ -50,7 +50,7 @@ export function NodeGraph({ graph, panel = true }: { graph: Graph; panel?: boole
   const reduce = useReducedMotion();
   const { w, h, edges, nodes, caption } = graph;
   const edgeClass = panel ? "stroke-paper/25" : "stroke-ink/20 dark:stroke-bone/25";
-  const dotClass = panel ? "fill-lime" : "fill-cobalt";
+  const dotClass = panel ? "fill-lime" : "fill-accent";
 
   const diagram = (
     <div className="overflow-x-auto">

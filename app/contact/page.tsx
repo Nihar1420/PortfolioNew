@@ -103,7 +103,7 @@ export default function ContactPage() {
                 </ul>
                 <a
                   href="#quick-message"
-                  className="label mt-6 rounded-full border border-current/40 py-3 text-center text-xs transition-colors hover:border-cobalt hover:text-cobalt"
+                  className="label mt-6 rounded-full border border-current/40 py-3 text-center text-xs transition-colors hover:border-cobalt hover:text-accent"
                 >
                   Pick this
                 </a>
@@ -141,7 +141,7 @@ export default function ContactPage() {
             <dl className="mt-4 divide-y divide-rule border-y border-rule">
               {looking.map((l) => (
                 <div key={l.k} className="grid grid-cols-1 gap-1 py-4 md:grid-cols-4">
-                  <dt className="label text-[10px] text-cobalt md:col-span-1">{l.k}</dt>
+                  <dt className="label text-[10px] text-accent md:col-span-1">{l.k}</dt>
                   <dd className="text-body md:col-span-3">{l.v}</dd>
                 </div>
               ))}
@@ -166,7 +166,7 @@ export default function ContactPage() {
             >
               <div className="flex items-center justify-between">
                 <span className="text-2xl font-bold tracking-tightest">{e.label}</span>
-                <span className="text-xl text-muted transition-colors group-hover:text-cobalt">&#8599;</span>
+                <span className="text-xl text-muted transition-colors group-hover:text-accent">&#8599;</span>
               </div>
               <p className="mt-10 text-sm text-muted">{e.sub}</p>
             </a>

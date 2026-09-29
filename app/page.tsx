@@ -31,7 +31,7 @@ export default function Home() {
     <Room room="paper">
       {/* Hero */}
       <section className="mx-auto max-w-page px-6 pb-10 pt-6 md:px-10 md:pt-8">
-        <p className="label text-xs text-cobalt">{profile.name} · Ahmedabad, India</p>
+        <p className="label text-xs text-accent">{profile.name} · Ahmedabad, India</p>
         <div className="mt-6 grid gap-10 md:grid-cols-12 md:items-center">
           <div className="md:col-span-7">
             <h1 className="text-d2 font-bold leading-[0.95] tracking-tightest">
@@ -42,7 +42,7 @@ export default function Home() {
                 </span>{" "}
                 into
               </Rise>
-              <Rise delay={0.14} className="text-cobalt">
+              <Rise delay={0.14} className="text-accent">
                 real software.
               </Rise>
             </h1>
@@ -61,7 +61,7 @@ export default function Home() {
               </a>
               <Link
                 href="/about"
-                className="label rounded-full border border-ink/25 px-6 py-3 text-center text-sm transition-colors hover:border-cobalt hover:text-cobalt dark:border-bone/25"
+                className="label rounded-full border border-ink/25 px-6 py-3 text-center text-sm transition-colors hover:border-cobalt hover:text-accent dark:border-bone/25"
               >
                 Who I am
               </Link>
@@ -135,7 +135,7 @@ export default function Home() {
               href="https://github.com/langchain-ai/deepagentsjs/pull/796"
               target="_blank"
               rel="noreferrer"
-              className="text-cobalt underline underline-offset-4"
+              className="text-accent underline underline-offset-4"
             >
               langchain-ai/deepagentsjs
             </a>{" "}
@@ -149,7 +149,7 @@ export default function Home() {
       <section className="mx-auto max-w-page px-6 pb-24 pt-10 md:px-10">
         <div className="flex flex-col items-start justify-between gap-6 rounded-3xl bg-raised p-8 md:flex-row md:items-center md:p-14">
           <h2 className="text-4xl font-bold tracking-tightest md:text-5xl">
-            Building something like this? <span className="text-cobalt dark:text-lime">Let&rsquo;s talk.</span>
+            Building something like this? <span className="text-accent dark:text-lime">Let&rsquo;s talk.</span>
           </h2>
           <Link
             href="/contact"

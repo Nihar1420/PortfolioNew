@@ -24,7 +24,7 @@ const beliefs = [
   {
     n: "03",
     bg: "bg-ink text-paper dark:bg-raised",
-    num: "text-cobalt",
+    num: "text-accent",
     title: "Ship it, then make it good.",
     body: "Real users teach faster than whiteboards. Everything on this site is public: live, on npm, or on GitHub.",
   },
@@ -70,7 +70,7 @@ export default function AboutPage() {
             <Rise>I build the</Rise>
             <Rise delay={0.06}>boring parts</Rise>
             <Rise delay={0.12}>that make AI</Rise>
-            <Rise delay={0.18} className="text-cobalt">
+            <Rise delay={0.18} className="text-accent">
               feel like magic.
             </Rise>
           </h1>
@@ -109,8 +109,8 @@ export default function AboutPage() {
               For about seven years I&rsquo;ve built for the web: Next.js on the
               front, NestJS and .NET behind it, the odd Laravel app. Then LLMs
               arrived and the interesting problem moved. It stopped being{" "}
-              <span className="text-cobalt">can the model do it</span> and became{" "}
-              <span className="text-cobalt">what does the system around it look like</span>.
+              <span className="text-accent">can the model do it</span> and became{" "}
+              <span className="text-accent">what does the system around it look like</span>.
               That&rsquo;s where I live now: agents, retrieval, orchestration, and
               the unglamorous plumbing that keeps them honest. By day I lead a
               small senior team shipping this for enterprise clients in Germany,
@@ -187,14 +187,14 @@ export default function AboutPage() {
             const inner = (
               <>
                 <p className="font-bold">
-                  {a.title} {a.href && <span className="text-cobalt">&#8599;</span>}
+                  {a.title} {a.href && <span className="text-accent">&#8599;</span>}
                 </p>
                 <p className="mt-1 text-sm text-muted">{a.sub}</p>
               </>
             );
             const cls = `border-b border-rule py-6 md:border-b-0 md:py-8 ${i < along.length - 1 ? "md:border-r md:pr-6" : ""} ${i > 0 ? "md:pl-6" : ""}`;
             return a.href ? (
-              <a key={i} href={a.href} target="_blank" rel="noreferrer" className={`${cls} block transition-colors hover:text-cobalt`}>
+              <a key={i} href={a.href} target="_blank" rel="noreferrer" className={`${cls} block transition-colors hover:text-accent`}>
                 {inner}
               </a>
             ) : (

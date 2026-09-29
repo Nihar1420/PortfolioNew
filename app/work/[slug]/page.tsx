@@ -31,7 +31,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
     <Room room="paper">
       <article className="mx-auto max-w-page px-6 md:px-10">
         {/* Back link */}
-        <Link href="/work" className="label inline-block pt-2 text-xs text-muted hover:text-cobalt">
+        <Link href="/work" className="label inline-block pt-2 text-xs text-muted hover:text-accent">
           &larr; All work · {String(cs.index).padStart(2, "0")} of 04
         </Link>
 
@@ -64,7 +64,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
                         href={l.href}
                         target="_blank"
                         rel="noreferrer"
-                        className="font-bold text-cobalt hover:underline"
+                        className="font-bold text-accent hover:underline"
                       >
                         {l.label} &#8599;
                       </a>
@@ -84,14 +84,14 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
         {/* Problem + decision */}
         <div className="mt-16 grid gap-10 md:grid-cols-2">
           <FadeUp>
-            <p className="label text-xs text-cobalt">The problem</p>
+            <p className="label text-xs text-accent">The problem</p>
             <h2 className="mt-4 text-3xl font-bold tracking-tightest md:text-4xl">
               {cs.problem.heading}
             </h2>
             <p className="mt-5 text-body">{cs.problem.body}</p>
           </FadeUp>
           <FadeUp delay={0.08}>
-            <p className="label text-xs text-cobalt">The hard decision</p>
+            <p className="label text-xs text-accent">The hard decision</p>
             <h2 className="mt-4 text-3xl font-bold tracking-tightest md:text-4xl">
               {cs.decision.heading}
             </h2>
