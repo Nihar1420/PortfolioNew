@@ -19,7 +19,7 @@ export function LocalClock() {
   }, []);
 
   return (
-    <div className="rounded-3xl border border-rule p-6 dark:border-bone/15 dark:bg-raised">
+    <div className="rounded-3xl bg-raised p-6">
       <p className="label text-[10px] text-muted">Local time · Ahmedabad</p>
       <p className="mt-2 text-5xl font-bold tracking-tightest">
         {time || "--:--"} <span className="text-base text-muted">IST</span>

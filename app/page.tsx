@@ -69,7 +69,7 @@ export default function Home() {
           </div>
           <div className="md:col-span-5">
             <div className="animate-floaty">
-              <NodeGraph graph={heroGraph} tone="light" panel={false} />
+              <NodeGraph graph={heroGraph} panel={false} />
             </div>
             <div className="mt-4 flex justify-end pr-2">
               <HeroBadge />
@@ -89,12 +89,17 @@ export default function Home() {
         <div className="rounded-3xl bg-cobalt px-8 py-14 text-paper md:px-14 md:py-20">
           <p className="label text-[10px] text-lime">Next stop</p>
           <div className="mt-5 flex flex-col justify-between gap-8 md:flex-row md:items-end">
-            <h2 className="max-w-2xl text-4xl font-bold leading-tight tracking-tightest md:text-5xl">
-              Those were the trailers. The full stories are in{" "}
-              <span className="text-lime">Featured projects.</span>
-            </h2>
+            <div className="max-w-2xl">
+              <h2 className="text-4xl font-bold leading-tight tracking-tightest md:text-5xl">
+                Those were the trailers. The full stories are in{" "}
+                <span className="text-lime">Featured projects.</span>
+              </h2>
+              <p className="mt-4 text-paper/70">
+                Architecture, hard decisions and results for all four.
+              </p>
+            </div>
             <div className="flex items-center gap-4">
-              <div className="flex flex-col items-end gap-2">
+              <div className="flex flex-col items-end -space-y-1">
                 {[
                   { n: "Githancer", c: "bg-ink text-paper", r: "-rotate-3" },
                   { n: "Agenthire", c: "bg-lime text-ink", r: "rotate-2" },
@@ -142,7 +147,7 @@ export default function Home() {
 
       {/* Final CTA */}
       <section className="mx-auto max-w-page px-6 pb-24 pt-10 md:px-10">
-        <div className="flex flex-col items-start justify-between gap-6 rounded-3xl border border-rule p-8 dark:bg-raised md:flex-row md:items-center md:p-14">
+        <div className="flex flex-col items-start justify-between gap-6 rounded-3xl bg-raised p-8 md:flex-row md:items-center md:p-14">
           <h2 className="text-4xl font-bold tracking-tightest md:text-5xl">
             Building something like this? <span className="text-cobalt dark:text-lime">Let&rsquo;s talk.</span>
           </h2>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { cn } from "@/lib/cn";
 
 export function TimelinePlanner({ onTried }: { onTried?: () => void }) {
   const [spread, setSpread] = useState(false);
@@ -15,12 +14,16 @@ export function TimelinePlanner({ onTried }: { onTried?: () => void }) {
       <p className="mt-6 text-2xl font-bold tracking-tightest">
         {spread ? "14 commits, spread across the range" : "14 commits, all stuck on one day"}
       </p>
-      <div className="mt-6 flex h-8 items-center">
+      <div className="relative mt-6 h-20">
         {dots.map((_, i) => (
           <span
             key={i}
-            className={cn("h-7 w-7 rounded-md bg-lime transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]")}
-            style={{ marginLeft: i === 0 ? 0 : spread ? "auto" : "-14px" }}
+            className="absolute h-7 w-7 rounded-md bg-lime transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+            style={
+              spread
+                ? { left: `calc(${(i / (dots.length - 1)) * 100}% - 14px)`, top: "28px" }
+                : { left: `${i * 5}px`, top: `${(i % 4) * 6}px` }
+            }
           />
         ))}
       </div>

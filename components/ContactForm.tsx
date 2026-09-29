@@ -56,7 +56,7 @@ export function ContactForm({ topic: initialTopic = "" }: { topic?: string }) {
     "w-full rounded-2xl border border-rule bg-transparent px-4 py-3 text-sm outline-none focus:border-cobalt dark:border-bone/20";
 
   return (
-    <div className="rounded-3xl bg-rule/40 p-6 dark:bg-raised md:p-8">
+    <div className="rounded-3xl bg-raised p-6 md:p-8">
       <div className="flex items-baseline justify-between">
         <h3 className="text-2xl font-bold tracking-tightest">Quick message</h3>
         <span className="label text-[10px] text-muted">~1 minute</span>
