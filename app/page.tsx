@@ -98,17 +98,22 @@ export default function Home() {
                 Architecture, hard decisions and results for all four.
               </p>
             </div>
-            <div className="flex items-center gap-4">
-              <div className="flex flex-col items-end -space-y-1">
+            <div className="flex items-center gap-3">
+              <div className="relative h-44 w-56 shrink-0">
                 {[
-                  { n: "Githancer", c: "bg-ink text-paper", r: "-rotate-3" },
-                  { n: "Agenthire", c: "bg-lime text-ink", r: "rotate-2" },
-                  { n: "Reel Purpose", c: "bg-paper text-ink", r: "-rotate-2" },
-                  { n: "AudioDJ Drops", c: "bg-paper text-ink", r: "rotate-3" },
-                ].map((chip) => (
+                  { n: "Githancer", c: "bg-ink text-paper", x: 0, r: -6 },
+                  { n: "Agenthire", c: "bg-lime text-ink", x: 36, r: 4 },
+                  { n: "Reel Purpose", c: "bg-paper text-ink", x: 8, r: -3 },
+                  { n: "AudioDJ Drops", c: "bg-paper text-ink", x: 46, r: 7 },
+                ].map((chip, i) => (
                   <span
                     key={chip.n}
-                    className={`rounded-md px-3 py-1.5 text-sm font-bold shadow-md ${chip.c} ${chip.r}`}
+                    className={`absolute left-0 whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-bold shadow-md ${chip.c}`}
+                    style={{
+                      top: `${i * 34}px`,
+                      transform: `translateX(${chip.x}px) rotate(${chip.r}deg)`,
+                      zIndex: i,
+                    }}
                   >
                     {chip.n}
                   </span>
