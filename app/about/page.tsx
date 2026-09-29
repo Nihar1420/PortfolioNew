@@ -2,9 +2,22 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Room } from "@/components/Room";
 import { Rise, FadeUp } from "@/components/Rise";
+import { Typewriter, type Seg } from "@/components/Typewriter";
 import { profile } from "@/data/content";
 
 export const metadata: Metadata = { title: "About" };
+
+const bio: Seg[] = [
+  {
+    text: "For about seven years I've built for the web: Next.js on the front, NestJS and .NET behind it, the odd Laravel app. Then LLMs arrived and the interesting problem moved. It stopped being ",
+  },
+  { text: "can the model do it", accent: true },
+  { text: " and became " },
+  { text: "what does the system around it look like", accent: true },
+  {
+    text: ". That's where I live now: agents, retrieval, orchestration, and the unglamorous plumbing that keeps them honest. By day I lead a small senior team shipping this for enterprise clients in Germany, Italy and the UAE. The rest of the time I ship my own things, which you've already seen.",
+  },
+];
 
 const beliefs = [
   {
@@ -31,9 +44,27 @@ const beliefs = [
 ];
 
 const offClock = [
-  { tint: "bg-rule", rotate: "-rotate-3", caption: "[TODO: caption, e.g. a hobby]" },
-  { tint: "bg-cobalt/20", rotate: "rotate-2", caption: "[TODO: caption, e.g. a place]" },
-  { tint: "bg-lime/40", rotate: "-rotate-1", caption: "[TODO: caption, e.g. a side interest]" },
+  {
+    tint: "bg-rule",
+    rotate: "-rotate-6",
+    tape: "-rotate-12",
+    offset: "md:mt-2",
+    caption: "[TODO: caption, e.g. a hobby]",
+  },
+  {
+    tint: "bg-cobalt/20",
+    rotate: "rotate-3",
+    tape: "rotate-6",
+    offset: "md:-mt-6",
+    caption: "[TODO: caption, e.g. a place]",
+  },
+  {
+    tint: "bg-lime/40",
+    rotate: "-rotate-2",
+    tape: "rotate-12",
+    offset: "md:mt-4",
+    caption: "[TODO: caption, e.g. a side interest]",
+  },
 ];
 
 const reachFor = {
@@ -104,20 +135,10 @@ export default function AboutPage() {
       <section className="mx-auto max-w-page px-6 py-14 md:px-10">
         <div className="grid gap-8 md:grid-cols-12">
           <p className="label text-xs text-muted md:col-span-3">The short story</p>
-          <FadeUp className="md:col-span-9">
-            <p className="text-2xl leading-relaxed text-body md:text-3xl">
-              For about seven years I&rsquo;ve built for the web: Next.js on the
-              front, NestJS and .NET behind it, the odd Laravel app. Then LLMs
-              arrived and the interesting problem moved. It stopped being{" "}
-              <span className="text-accent">can the model do it</span> and became{" "}
-              <span className="text-accent">what does the system around it look like</span>.
-              That&rsquo;s where I live now: agents, retrieval, orchestration, and
-              the unglamorous plumbing that keeps them honest. By day I lead a
-              small senior team shipping this for enterprise clients in Germany,
-              Italy and the UAE. The rest of the time I ship my own things, which
-              you&rsquo;ve already seen.
-            </p>
-          </FadeUp>
+          <Typewriter
+            segments={bio}
+            className="min-h-[16rem] text-2xl leading-relaxed text-body md:col-span-9 md:min-h-[14rem] md:text-3xl"
+          />
         </div>
       </section>
 
@@ -148,12 +169,17 @@ export default function AboutPage() {
               The bits that don&rsquo;t fit in a commit message.
             </p>
           </div>
-          <div className="flex flex-wrap justify-center gap-4 md:col-span-9 md:justify-end">
+          <div className="flex flex-wrap items-start justify-center gap-8 md:col-span-9 md:flex-nowrap md:justify-end md:gap-0 md:-space-x-8">
             {offClock.map((p, i) => (
               <div
                 key={i}
-                className={`w-44 rotate-0 bg-bone p-3 pb-8 shadow-lg ${p.rotate}`}
+                style={{ zIndex: i + 1 }}
+                className={`relative w-40 bg-bone p-3 pb-8 shadow-xl transition-transform duration-300 hover:z-20 hover:-translate-y-1 hover:rotate-0 sm:w-44 ${p.rotate} ${p.offset}`}
               >
+                <span
+                  aria-hidden
+                  className={`absolute -top-3 left-1/2 h-6 w-20 -translate-x-1/2 bg-lime/50 shadow-sm ${p.tape}`}
+                />
                 <div className={`flex aspect-square items-center justify-center ${p.tint} label text-[9px] text-ink/50`}>
                   [TODO: photo]
                 </div>
