@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Room } from "@/components/Room";
 import { Rise, FadeUp } from "@/components/Rise";
 import { NodeGraph } from "@/components/NodeGraph";
+import { HeroBadge } from "@/components/HeroBadge";
 import { ProjectsShowcase } from "@/components/ProjectsShowcase";
 import type { Graph } from "@/data/casestudies";
 import { profile } from "@/data/content";
@@ -70,6 +71,9 @@ export default function Home() {
             <div className="animate-floaty">
               <NodeGraph graph={heroGraph} tone="light" panel={false} />
             </div>
+            <div className="mt-4 flex justify-end pr-2">
+              <HeroBadge />
+            </div>
           </div>
         </div>
         <p className="mt-10 label text-[10px] text-muted">
@@ -89,13 +93,30 @@ export default function Home() {
               Those were the trailers. The full stories are in{" "}
               <span className="text-lime">Featured projects.</span>
             </h2>
-            <Link
-              href="/work"
-              className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-lime text-2xl text-ink transition-transform hover:translate-x-1"
-              aria-label="All projects"
-            >
-              →
-            </Link>
+            <div className="flex items-center gap-4">
+              <div className="flex flex-col items-end gap-2">
+                {[
+                  { n: "Githancer", c: "bg-ink text-paper", r: "-rotate-3" },
+                  { n: "Agenthire", c: "bg-lime text-ink", r: "rotate-2" },
+                  { n: "Reel Purpose", c: "bg-paper text-ink", r: "-rotate-2" },
+                  { n: "AudioDJ Drops", c: "bg-paper text-ink", r: "rotate-3" },
+                ].map((chip) => (
+                  <span
+                    key={chip.n}
+                    className={`rounded-md px-3 py-1.5 text-sm font-bold shadow-md ${chip.c} ${chip.r}`}
+                  >
+                    {chip.n}
+                  </span>
+                ))}
+              </div>
+              <Link
+                href="/work"
+                className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-lime text-2xl text-ink transition-transform hover:translate-x-1"
+                aria-label="All projects"
+              >
+                →
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -121,9 +142,9 @@ export default function Home() {
 
       {/* Final CTA */}
       <section className="mx-auto max-w-page px-6 pb-24 pt-10 md:px-10">
-        <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+        <div className="flex flex-col items-start justify-between gap-6 rounded-3xl border border-rule p-8 dark:bg-raised md:flex-row md:items-center md:p-14">
           <h2 className="text-4xl font-bold tracking-tightest md:text-5xl">
-            Building something like this? <span className="text-cobalt">Let&rsquo;s talk.</span>
+            Building something like this? <span className="text-cobalt dark:text-lime">Let&rsquo;s talk.</span>
           </h2>
           <Link
             href="/contact"
