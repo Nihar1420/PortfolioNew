@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Room } from "@/components/Room";
 import { Rise, FadeUp } from "@/components/Rise";
 import { profile } from "@/data/content";
@@ -77,18 +78,21 @@ export default function AboutPage() {
           {/* Candid photo card */}
           <div className="md:col-span-5 md:pl-6">
             <div className="relative aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl bg-ink dark:bg-raised">
-              {/* TODO(you): drop a candid (not headshot) photo at /public/about-candid.jpg
-                  and replace this block with <Image src="/about-candid.jpg" fill ... /> */}
-              <div className="flex h-full items-center justify-center p-6 text-center label text-[10px] text-bone/40">
-                [TODO: a candid photo of you, not a headshot]
-              </div>
-              <span className="absolute left-5 top-5 rounded-full bg-cobalt px-3 py-1 label text-[10px] text-paper">
+              <Image
+                src="/portrait.jpg"
+                alt={profile.name}
+                fill
+                sizes="(max-width: 768px) 90vw, 384px"
+                className="object-cover"
+                priority
+              />
+              <span className="absolute left-5 top-5 z-10 rounded-full bg-cobalt px-3 py-1 label text-[10px] text-paper">
                 Ahmedabad, IN
               </span>
-              <span className="absolute bottom-5 right-5 rounded-full bg-lime px-3 py-1 label text-[10px] text-ink">
+              <span className="absolute bottom-5 right-5 z-10 rounded-full bg-lime px-3 py-1 label text-[10px] text-ink">
                 Open to senior roles
               </span>
-              <span className="absolute bottom-5 left-5 flex h-9 w-9 items-center justify-center rounded-full bg-bone text-ink">
+              <span className="absolute bottom-5 left-5 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-bone text-ink">
                 ★
               </span>
             </div>

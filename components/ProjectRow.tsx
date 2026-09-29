@@ -6,7 +6,7 @@ export function ProjectRow({ project, index }: { project: Project; index: number
   return (
     <Link
       href={`/work/${project.slug}`}
-      className="group relative block overflow-hidden border-t border-paper/20"
+      className="group relative block overflow-hidden border-t border-paper/20 dark:border-bone/15"
     >
       <span className="absolute inset-0 -z-0 translate-y-full bg-lime transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0" />
 

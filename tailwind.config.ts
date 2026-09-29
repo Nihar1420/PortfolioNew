@@ -40,8 +40,14 @@ const config: Config = {
       maxWidth: { page: "80rem" },
       keyframes: {
         "spin-slow": { from: { transform: "rotate(0deg)" }, to: { transform: "rotate(360deg)" } },
+        eq: { "0%,100%": { transform: "scaleY(0.2)" }, "50%": { transform: "scaleY(1)" } },
+        floaty: { "0%,100%": { transform: "translateY(0)" }, "50%": { transform: "translateY(-6px)" } },
       },
-      animation: { "spin-slow": "spin-slow 22s linear infinite" },
+      animation: {
+        "spin-slow": "spin-slow 22s linear infinite",
+        eq: "eq 0.8s ease-in-out infinite",
+        floaty: "floaty 4s ease-in-out infinite",
+      },
     },
   },
   plugins: [],

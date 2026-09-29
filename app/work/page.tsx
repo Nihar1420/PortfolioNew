@@ -18,7 +18,7 @@ export default function WorkPage() {
             </Rise>
           </h1>
           <FadeUp delay={0.2} className="md:col-span-4">
-            <p className="text-oncobalt md:text-lg">
+            <p className="text-paper/80 dark:text-bone/70 md:text-lg">
               Four shipped systems: a published CLI, an autonomous agent and two
               live commerce products.
             </p>
@@ -30,7 +30,7 @@ export default function WorkPage() {
         {projects.map((p, i) => (
           <ProjectRow key={p.slug} project={p} index={i} />
         ))}
-        <div className="border-t border-paper/20" />
+        <div className="border-t border-paper/20 dark:border-bone/15" />
       </section>
     </Room>
   );

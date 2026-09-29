@@ -52,7 +52,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
               { label: "Stack", value: cs.stack },
               { label: "Links", value: null },
             ].map((m, i) => (
-              <div key={i} className="border-t border-ink/80 pt-3">
+              <div key={i} className="border-t border-ink/70 dark:border-bone/40 pt-3">
                 <p className="label text-[10px] text-muted">{m.label}</p>
                 {m.value ? (
                   <p className="mt-1 font-bold">{m.value}</p>
@@ -100,13 +100,13 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
         </div>
 
         {/* Stat band */}
-        <div className="mt-16 grid grid-cols-1 border-y border-ink/80 md:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 border-y border-ink/70 dark:border-bone/40 md:grid-cols-3">
           {cs.stats.map((s, i) => (
             <div
               key={i}
               className={cn(
                 "px-2 py-8 md:px-6",
-                i < cs.stats.length - 1 && "border-b border-ink/30 md:border-b-0 md:border-r",
+                i < cs.stats.length - 1 && "border-b border-ink/25 dark:border-bone/20 md:border-b-0 md:border-r",
               )}
             >
               <p className="text-4xl font-bold leading-none tracking-tightest md:text-5xl">
