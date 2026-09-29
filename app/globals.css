@@ -3,7 +3,17 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: light;
+  --c-cobalt: 27 63 214; /* #1b3fd6 */
+  --c-body: 51 51 47; /* #33332f */
+  --c-muted: 85 84 79; /* #55544f */
+  --c-rule: 214 213 205; /* #d6d5cd */
+}
+
+:root[data-theme="dark"] {
+  --c-cobalt: 124 147 240; /* #7c93f0 cobalt lifts on dark */
+  --c-body: 201 200 192; /* #c9c8c0 */
+  --c-muted: 163 163 155; /* #a3a39b */
+  --c-rule: 42 42 40; /* #2a2a28 */
 }
 
 html {
@@ -18,19 +28,22 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+:root[data-theme="dark"] body {
+  background-color: #0f0f0e;
+  color: #edece6;
+}
+
 ::selection {
   background: #d4f24a;
   color: #111111;
 }
 
-/* Small bold caps label */
 .label {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
-/* Arch shape for the About portrait */
 .arch {
   border-top-left-radius: 9999px;
   border-top-right-radius: 9999px;
@@ -40,6 +53,19 @@ a:focus-visible,
 button:focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 3px;
+}
+
+/* Circle-reveal for the theme switch (View Transitions API) */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-old(root) {
+  z-index: 1;
+}
+::view-transition-new(root) {
+  z-index: 2147483646;
 }
 
 @media (prefers-reduced-motion: reduce) {

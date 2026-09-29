@@ -31,9 +31,15 @@ export const metadata: Metadata = {
   },
 };
 
+// Set the theme before first paint to avoid a flash.
+const noFlash = `(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={kreon.variable}>
+    <html lang="en" className={kreon.variable} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: noFlash }} />
+      </head>
       <body>{children}</body>
     </html>
   );

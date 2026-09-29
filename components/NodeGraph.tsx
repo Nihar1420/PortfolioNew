@@ -121,7 +121,7 @@ export function NodeGraph({
   if (!panel) return diagram;
 
   return (
-    <div className="rounded-3xl bg-ink p-6 md:p-8">
+    <div className="rounded-3xl bg-ink p-6 dark:bg-raised md:p-8">
       {caption && <p className="label text-xs text-paper/50">{caption}</p>}
       <div className="mt-4">{diagram}</div>
     </div>

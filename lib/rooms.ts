@@ -1,5 +1,6 @@
-// Per-page "rooms" from the design spec:
-// Home/case = Paper, Work/404 = Cobalt, About = Lime, Contact = Ink.
+// Per-page "rooms". Light theme uses the concept's colour blocking
+// (paper for Home/About/Contact/cases, cobalt for Work). Dark theme
+// collapses every room to Night with Bone text + lifted accents.
 
 export type RoomName = "paper" | "cobalt" | "lime" | "ink";
 
@@ -12,47 +13,47 @@ export const rooms: Record<
     active: string;
     pill: string;
     rule: string;
-    wipe: string; // color of the entrance panel that lifts off
-    accentText: string; // headline accent color
+    wipe: string;
+    accentText: string;
   }
 > = {
   paper: {
-    bg: "bg-paper",
-    text: "text-ink",
-    link: "text-ink/60 hover:text-cobalt",
+    bg: "bg-paper dark:bg-night",
+    text: "text-ink dark:text-bone",
+    link: "text-ink/60 hover:text-cobalt dark:text-bone/60 dark:hover:text-cobalt",
     active: "text-cobalt",
-    pill: "bg-ink text-paper hover:bg-cobalt",
+    pill: "bg-ink text-paper hover:bg-cobalt dark:bg-bone dark:text-ink dark:hover:bg-cobalt",
     rule: "border-rule",
     wipe: "bg-cobalt",
     accentText: "text-cobalt",
   },
   cobalt: {
-    bg: "bg-cobalt",
-    text: "text-paper",
-    link: "text-paper/70 hover:text-lime",
+    bg: "bg-cobalt dark:bg-night",
+    text: "text-paper dark:text-bone",
+    link: "text-paper/70 hover:text-lime dark:text-bone/70 dark:hover:text-lime",
     active: "text-lime",
-    pill: "bg-lime text-ink hover:bg-paper",
-    rule: "border-paper/20",
+    pill: "bg-lime text-ink hover:bg-paper dark:hover:bg-bone",
+    rule: "border-paper/20 dark:border-bone/15",
     wipe: "bg-lime",
     accentText: "text-lime",
   },
   lime: {
-    bg: "bg-lime",
-    text: "text-ink",
-    link: "text-ink/60 hover:text-cobalt",
-    active: "text-cobalt",
-    pill: "bg-ink text-paper hover:bg-cobalt",
-    rule: "border-ink/15",
+    bg: "bg-lime dark:bg-night",
+    text: "text-ink dark:text-bone",
+    link: "text-ink/60 hover:text-cobalt dark:text-bone/60 dark:hover:text-cobalt",
+    active: "text-cobalt dark:text-cobalt",
+    pill: "bg-ink text-paper hover:bg-cobalt dark:bg-bone dark:text-ink",
+    rule: "border-ink/15 dark:border-bone/15",
     wipe: "bg-cobalt",
     accentText: "text-cobalt",
   },
   ink: {
-    bg: "bg-ink",
-    text: "text-paper",
-    link: "text-paper/60 hover:text-lime",
+    bg: "bg-ink dark:bg-night",
+    text: "text-paper dark:text-bone",
+    link: "text-paper/60 hover:text-lime dark:text-bone/60 dark:hover:text-lime",
     active: "text-lime",
-    pill: "bg-lime text-ink hover:bg-paper",
-    rule: "border-paper/15",
+    pill: "bg-lime text-ink hover:bg-paper dark:hover:bg-bone",
+    rule: "border-paper/15 dark:border-bone/15",
     wipe: "bg-cobalt",
     accentText: "text-lime",
   },

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { nav } from "@/data/content";
 import { rooms, type RoomName } from "@/lib/rooms";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { cn } from "@/lib/cn";
 
 export function Nav({ room }: { room: RoomName }) {
@@ -38,20 +39,24 @@ export function Nav({ room }: { room: RoomName }) {
           >
             Let&rsquo;s talk
           </a>
+          <ThemeToggle />
         </div>
 
-        <button
-          className={cn("md:hidden", r.text)}
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-        >
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
+          <button
+            className={r.text}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+          >
           <span className="relative block h-4 w-7">
             <span className={cn("absolute left-0 h-0.5 w-7 bg-current transition-transform", open ? "top-2 rotate-45" : "top-0")} />
             <span className={cn("absolute left-0 top-2 h-0.5 w-7 bg-current transition-opacity", open && "opacity-0")} />
             <span className={cn("absolute left-0 h-0.5 w-7 bg-current transition-transform", open ? "top-2 -rotate-45" : "top-4")} />
           </span>
-        </button>
+          </button>
+        </div>
       </nav>
 
       {open && (
